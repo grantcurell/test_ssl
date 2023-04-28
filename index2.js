@@ -10,10 +10,10 @@ const tls = require('tls'),
 
 // Private key and public certificate for access
 const options = {
-	key: fs.readFileSync('private-key.pem'),
-	cert: fs.readFileSync('public-cert.pem'),
+	key: fs.readFileSync('./server_certs/grant.dell.com.key'),
+	cert: fs.readFileSync('./server_certs/grant.dell.com.crt'),
 	requestCert: true,
-	ca: [fs.readFileSync('client-cert.pem')],
+	ca: [fs.readFileSync('./server_certs/rootCA.crt')],
 	rejectUnauthorized: true
 };
 
