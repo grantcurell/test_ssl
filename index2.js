@@ -1,6 +1,8 @@
 // Node.js program to demonstrate the
 // tlsSocket.getPeerCertificate() method
 
+const util = require('util');
+
 const tls = require('tls'),
 	fs = require('fs'),
 
@@ -27,7 +29,7 @@ server.on('secureConnection', function (socket) {
 	// by using tlsSocket.getPeerCertificate() method
 	const value = socket.getPeerCertificate(true);
 	//value['valid_from'] = value['valid_from'].toString();
-	socket.write("peer certificate : " + JSON.stringify(value));
+	socket.write("peer certificate : " + util.inspect(value));
 
 	// Stopping the server
 	// by using the close() method
